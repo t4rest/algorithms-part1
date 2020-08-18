@@ -1,10 +1,9 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdIn;
 
-import java.lang.IllegalArgumentException;
-import java.util.NoSuchElementException;
 
 public class Deque<Item> implements Iterable<Item> {
 
@@ -45,6 +44,8 @@ public class Deque<Item> implements Iterable<Item> {
             this.first.next = null;
             this.first.prev = null;
             this.last = this.first;
+
+            this.size++;
 
             return;
         }
@@ -96,6 +97,7 @@ public class Deque<Item> implements Iterable<Item> {
         } else {
             this.first.prev = null;
         }
+
         return item;
     }
 
